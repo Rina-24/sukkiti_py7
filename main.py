@@ -21,25 +21,32 @@ def button_click():
     text = entry.get()
     print(text)
 
-button = tk.Button(root,text="ボタンだよ",font=("Arial",30),command=button_click)
-button.pack()
+# button = tk.Button(root,text="ボタンだよ",font=("Arial",30),command=button_click)
+# button.pack()
 
-entry = tk.Entry(root,font=("Arial",30))
-entry.pack()
+# entry = tk.Entry(root,font=("Arial",30))
+# entry.pack()
 
 # 画像を表示
-load_image = tk.PhotoImage(file="chopper.png") # 画像の読み込み（ファイルの選択）
-img = tk.Label(root,image=load_image) # 画像パーツの作成
-img.pack() # 画像をウィンドウに配置
+# load_image = tk.PhotoImage(file="chopper.png") # 画像の読み込み（ファイルの選択）
+# img = tk.Label(root,image=load_image) # 画像パーツの作成
+# img.pack() # 画像をウィンドウに配置
 
 # 複数行のメッセージ
-msg = tk.Message(
-    root,
-    text="このキャラクターはチョッパーです。トナカイです。",
-    font="white",
-    width=300
-)
+# msg = tk.Message(
+#     root,
+#     text="このキャラクターはチョッパーです。トナカイです。",
+#     font="white",
+#     width=300
+# )
 
-msg.pack()
+# msg.pack()
 
+canvas = tk.Canvas(root,bg="black")
+canvas.pack()
+
+ # 第一、二引数はキャンバスのｘ座標とy座標 第三引数はテキスト内容 第四引数以降は他の調整
+ # TKインターキャンバスは左上が（0，0）になる。そのため特に指定しないと0,0の座標になるので見切れる。
+ # （基準位置（アンカー）は指定した文字の中心が0，0にくる）"nw"で指定すると（northとwest）北西がアンカーになる。真ん中はセンター
+canvas.create_text(0,0,text="テスト",fill="white",font=("Arial",20),anchor="nw")
 root.mainloop()
