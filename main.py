@@ -26,4 +26,20 @@ button.pack()
 
 entry = tk.Entry(root,font=("Arial",30))
 entry.pack()
+
+# 画像を表示
+load_image = tk.PhotoImage(file="chopper.png") # 画像の読み込み（ファイルの選択）
+img = tk.Label(root,image=load_image) # 画像パーツの作成
+img.pack() # 画像をウィンドウに配置
+
+# 複数行のメッセージ
+msg = tk.Message(
+    root,
+    text="このキャラクターはチョッパーです。トナカイです。",
+    font="white",
+    width=300
+)
+
+msg.pack()
+
 root.mainloop()
